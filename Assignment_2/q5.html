@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .empTable, .empTable th, .empTable td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        .empTable th, .empTable td {
+            padding: 10px;
+        }
+        .empTable{
+            color: rgb(43, 61, 181);
+        }
+    </style>
+</head>
+<body>
+        <div>
+            <h1>Employee Details</h1>
+            <div id="container"></div>
+            <br>
+            <button onclick="addEmployee()">Add Employee</button>
+            <button onclick="submit(event)">submit</button>
+            <br>
+            <br>
+            <div id="result"></div>    
+        </div>
+        <script>
+            function addEmployee(){
+                let org=document.createElement("input")
+                org.type="text"
+                org.placeholder="Organization"
+                org.className="org"
+                let desgn=document.createElement("input")
+                desgn.type="text"
+                desgn.placeholder="Designation"
+                desgn.className="desgn"
+                let dur=document.createElement("input")
+                dur.type="day"
+                dur.placeholder="Duration"
+                dur.className="dur"
+                let rmvBtn=document.createElement("button")
+                rmvBtn.innerHTML="X"
+                let br=document.createElement("br")
+                rmvBtn.onclick = function(){
+                    rmvBtn.remove();
+                    org.remove();
+                    desgn.remove();
+                    dur.remove();
+                    br.remove();
+                }
+                let container=document.getElementById("container")
+                container.append(org)
+                container.append(desgn)
+                container.append(dur)
+                container.append(rmvBtn)
+                container.append(br)
+            }
+            function submit(e){
+                e.preventDefault();
+                let cont=document.getElementById("result")
+                let orgs=document.getElementsByClassName("org")
+                let desgns=document.getElementsByClassName("desgn")
+                let durs=document. getElementsByClassName("dur")
+                let TableStr="<table class='empTable'>"
+                TableStr+="<tr><th>Organization</th><th>Designation</th><th>Duration</th></tr>"
+                for(i=0;i<orgs.length;i++){
+                    TableStr+="<tr><td>"+orgs[i].value+"</td><td>"+desgns[i].value+"</td><td>"+durs[i].value+"</td></tr>"
+                }
+                TableStr+="</table>"
+                cont.innerHTML=TableStr
+            }
+        </script>
+</body>
+</html>

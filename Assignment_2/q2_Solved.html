@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="table"></div>
+    <script>
+        let students = [
+            { roll: 1, name: "Satya", mobile: "1234567890", email: "Satya@example.com" },
+            { roll: 2, name: "Sneha", mobile: "0987654321", email: "Sneha@example.com" },
+            { roll: 3, name: "Asha", mobile: "1122334455", email: "Asha@example.com" },
+            { roll: 4, name: "Ram", mobile: "5566778899", email: "Ram@example.com" },
+            { roll: 5, name: "Shyam", mobile: "9988776655", email: "Shyam@example.com" },
+            { roll: 6, name: "Dev", mobile: "1234567890", email: "Dev@example.com" },
+            { roll: 7, name: "Janmenjay", mobile: "0987654321", email: "Janmenjay@example.com" },
+            { roll: 8, name: "Dibya", mobile: "1122334455", email: "Dibya@example.com" },
+            { roll: 9, name: "Abhi", mobile: "5566778899", email: "Abhi@example.com" },
+            { roll: 10, name: "Debashis", mobile: "9988776655", email: "Debashis@example.com" },
+        ];
+      let htmlStr = "<table>";
+        htmlStr += "<tr><th>Roll</th><th>Name</th><th>Mobile</th><th>Mail</th></tr>"
+        for(std of students){
+            htmlStr +="<tr><th>" + std.roll + "</th><th>" + std.name + "</th><th>" + std.mobile + "</th><th>" + std.email + "</th></tr>"
+        }
+        htmlStr += "</table>";
+        document.getElementById("table").innerHTML = htmlStr;
+      
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="Task">
+      <h3>To-Do</h3>
+      <form action="" method="post" onsubmit="add(event)">
+        <div id="inputs">
+          <input type="text" name="Task" placeholder="Task" />
+          <input type="date" name="Date" placeholder="Date" />
+          <input type="time" name="Time" placeholder="Time" />
+          <input type="submit" value="add">
+        </div>
+        
+
+      </form>
+    </div>
+     <script>
+       function add(e){
+        e.preventDefault();
+        let task=document.createElement("input");
+        task.type="text";
+        task.name="Task";
+        task.placeholder="Task"
+         let date=document.createElement("input");
+        date.type="date";
+        date.name="Date";
+        date.placeholder="Date" 
+        let time=document.createElement("input")
+        time.type="time";
+        time.name="Time";
+        time.placeholder="Time"
+        let DoneBtn=document.createElement("button")
+        DoneBtn.innerHTML="Done"
+        DoneBtn.onclick=function(){
+          DoneBtn.remove();
+          task.remove()
+          date.remove()
+          time.remove()
+        }
+        let br=document.createElement("br")
+        let Tasks=document.getElementById("Task")
+        Tasks.append(task)
+        Tasks.append(date)
+        Tasks.append(time)
+        Tasks.append(DoneBtn)
+        Tasks.append(br)
+       }
+    </script>
+  </body>
+</html>

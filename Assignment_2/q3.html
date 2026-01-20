@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #Box{
+            height: 500px;
+            width: 500px;
+            border: 1px solid gray;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <div id ="Box">
+    
+    </div>
+    <br>
+    <div id="Color">
+    </div>
+    </div>
+    <script>
+        let col=document.getElementById("Color");
+        let Colors=["Red","Green","Blue"]
+        for(c of Colors){
+            let btn=document.createElement("button")
+            btn.innerHTML=c;
+            btn.onclick = function(){
+                displayColor(btn.innerHTML);
+            }
+            document.getElementById("Color").append(btn)
+        }
+        function displayColor(color){
+            let box=document.getElementById("Box");
+            box.style.backgroundColor=color;
+        }
+
+
+
+    </script>
+</body>
+</html>
